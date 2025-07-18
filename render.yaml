@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: hotmail-checker-bot
+    runtime: python3
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    repo: https://github.com/greatautomate/hotmail
+    branch: main
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11"
